@@ -1,0 +1,17 @@
+﻿{
+  "name": "overseer-sample-project",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Projeto TypeScript pequeno usado como exemplo real para relatorios do Overclock Project Overseer.",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc --pretty false",
+    "check": "tsc --noEmit --pretty false"
+  },
+  "dependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,49 @@
+{
+  "name": "overclock-project-overseer",
+  "version": "0.1.0",
+  "description": "Local CLI for running Overclock project overseer checkups.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhadr/overclock-project-overseer.git"
+  },
+  "homepage": "https://github.com/jhadr/overclock-project-overseer#readme",
+  "bugs": {
+    "url": "https://github.com/jhadr/overclock-project-overseer/issues"
+  },
+  "author": "jhadr",
+  "bin": {
+    "overclock-project-overseer": "./dist/index.js",
+    "ovr": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node ./dist/index.js",
+    "dev": "tsx ./src/index.ts",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "overclock",
+    "overseer",
+    "project-checkup",
+    "cli",
+    "devops"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
