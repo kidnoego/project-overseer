@@ -1,19 +1,19 @@
 {
-  "name": "overclock-project-overseer",
+  "name": "project-overseer",
   "version": "0.1.0",
-  "description": "Local CLI for running Overclock project overseer checkups.",
+  "description": "Local CLI for running project overseer checkups.",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhadr/overclock-project-overseer.git"
+    "url": "https://github.com/kidnoego/project-overseer.git"
   },
-  "homepage": "https://github.com/jhadr/overclock-project-overseer#readme",
+  "homepage": "https://github.com/kidnoego/project-overseer#readme",
   "bugs": {
-    "url": "https://github.com/jhadr/overclock-project-overseer/issues"
+    "url": "https://github.com/kidnoego/project-overseer/issues"
   },
-  "author": "jhadr",
+  "author": "kidnoego",
   "bin": {
-    "overclock-project-overseer": "./dist/index.js",
+    "project-overseer": "./dist/index.js",
     "ovr": "./dist/index.js"
   },
   "files": [
@@ -28,7 +28,6 @@
     "prepack": "npm run build"
   },
   "keywords": [
-    "overclock",
     "overseer",
     "project-checkup",
     "cli",

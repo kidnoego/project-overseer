@@ -1,6 +1,6 @@
 ﻿# Comandos
 
-Este documento descreve a interface esperada de comandos do Overclock Project Overseer. Ele e documental: nao implementa CLI, nao executa agentes diretamente e nao altera recursos externos.
+Este documento descreve a interface esperada de comandos do Project Overseer. Ele e documental: nao implementa CLI, nao executa agentes diretamente e nao altera recursos externos.
 
 ## Estrutura geral
 
@@ -117,7 +117,7 @@ Notas:
 
 ## Roadmap de Distribuicao
 
-O Overclock Project Overseer devera suportar 3 formas oficiais de instalacao e distribuicao.
+O Project Overseer devera suportar 3 formas oficiais de instalacao e distribuicao.
 
 ### 1. Git Clone
 
@@ -125,7 +125,7 @@ Fluxo esperado:
 
 ```bash
 git clone <url-do-repositorio>
-cd overclock-project-overseer
+cd project-overseer
 npm install
 npm run build
 npm start
@@ -138,7 +138,7 @@ Fluxo esperado:
 ```bash
 baixar ZIP do GitHub
 extrair o ZIP
-cd overclock-project-overseer
+cd project-overseer
 npm install
 npm run build
 npm start
@@ -149,13 +149,13 @@ npm start
 Fluxo esperado:
 
 ```bash
-npm install -g overclock-project-overseer
+npm install -g project-overseer
 ```
 
 ou:
 
 ```bash
-npx overclock-project-overseer
+npx project-overseer
 ```
 
 O pacote npm devera expor o comando principal `ovr`.

@@ -1,4 +1,4 @@
-﻿# Overclock Project Overseer
+﻿# Project Overseer
 
 CLI local em Node.js + TypeScript para fazer checkups tecnicos de projetos. O
 comando publico da ferramenta e `ovr`.
@@ -42,7 +42,7 @@ ovr checkup completo
 Quando o pacote estiver publicado, o uso esperado sera:
 
 ```bash
-npx overclock-project-overseer checkup completo
+npx project-overseer checkup completo
 ```
 
 ## Comandos
@@ -95,7 +95,7 @@ A CLI deve permanecer modular e facil de auditar:
 - `src/core/`: scanner, orquestracao e escrita de relatorios.
 - `agents/`: definicoes do orquestrador e dos subagentes especialistas.
 - `docs/`: visao, niveis, comandos, agentes e politica de monetizacao.
-- `prompts/`: prompts base para execucao dentro da ADE/Overclock.
+- `prompts/`: prompts base para execucao no ambiente local da IDE/IA do usuario.
 - `examples/`: exemplos de saida dos niveis.
 - `.overseer/`: saidas locais geradas na maquina do usuario.
 

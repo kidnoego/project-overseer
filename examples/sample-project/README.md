@@ -1,6 +1,6 @@
 ﻿# Overseer Sample Project
 
-Projeto TypeScript minimo usado para demonstrar os relatorios de QA do Overclock Project Overseer.
+Projeto TypeScript minimo usado para demonstrar os relatorios de QA do Project Overseer.
 
 ## O que existe
 

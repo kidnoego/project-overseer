@@ -26,7 +26,7 @@ overseer-qa
 ## Projeto
 ```json
 {
-  "name": "overclock-project-overseer-sample-project",
+  "name": "project-overseer-sample-project",
   "language": "typescript",
   "entrypoints": ["src/index.ts"],
   "packageManager": "npm"

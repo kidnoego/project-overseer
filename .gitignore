@@ -25,6 +25,7 @@ build/
 
 # --- Overseer Local State ---
 .overseer/
+# IDE/runtime cache local (do editor que esta sendo usado pra desenvolver):
 .overclock-app/
 
 # --- IDE & Editor ---

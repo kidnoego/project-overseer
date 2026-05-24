@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Projeto TypeScript pequeno usado como exemplo real para relatorios do Overclock Project Overseer.",
+  "description": "Projeto TypeScript pequeno usado como exemplo real para relatorios do Project Overseer.",
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc --pretty false",

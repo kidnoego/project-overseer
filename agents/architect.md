@@ -2,7 +2,7 @@
 
 ## Papel
 
-O Architect Agent avalia a arquitetura geral do projeto analisado e a organizacao futura da CLI do Overclock Project Overseer.
+O Architect Agent avalia a arquitetura geral do projeto analisado e a organizacao futura da CLI do Project Overseer.
 
 Seu foco e diagnostico estrutural. Ele deve explicar como o sistema esta organizado, onde ha acoplamento, quais limites de modulo precisam ficar claros e quais decisoes arquiteturais aumentam ou reduzem risco.
 

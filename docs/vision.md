@@ -1,6 +1,6 @@
 # Visao do Produto
 
-O Overclock Project Overseer e um sistema de checkup tecnico para projetos de software executado dentro do ambiente Overclock/ADE.
+O Project Overseer e um sistema de checkup tecnico para projetos de software executado no ambiente local da IDE ou ferramenta de IA do usuario.
 
 Ele atua como uma camada de orquestracao entre o usuario e agentes especialistas. O orquestrador coleta o objetivo, distribui a analise, consolida os achados e devolve uma resposta final. Ele nao implementa codigo, nao altera o projeto analisado e nao substitui o julgamento do usuario.
 
@@ -10,7 +10,7 @@ O objetivo principal e transformar leituras tecnicas paralelas em diagnosticos c
 
 - Desenvolvedores que querem uma segunda opiniao tecnica sobre um projeto.
 - Fundadores ou equipes pequenas que precisam entender riscos antes de investir em melhorias.
-- Times usando Overclock/ADE que querem organizar feedback de agentes em um fluxo controlado.
+- Times usando IDEs com agentes de IA que querem organizar feedback de agentes em um fluxo controlado.
 
 ## Principios do produto
 
@@ -54,7 +54,7 @@ Essa separacao evita que regras de produto, prompts de agentes e formatacao de r
 
 ## Roadmap de Distribuicao
 
-O Overclock Project Overseer devera suportar 3 formas oficiais de instalacao e distribuicao.
+O Project Overseer devera suportar 3 formas oficiais de instalacao e distribuicao.
 
 ### 1. Git Clone
 
@@ -62,7 +62,7 @@ Fluxo esperado:
 
 ```bash
 git clone <url-do-repositorio>
-cd overclock-project-overseer
+cd project-overseer
 npm install
 npm run build
 npm start
@@ -75,7 +75,7 @@ Fluxo esperado:
 ```bash
 baixar ZIP do GitHub
 extrair o ZIP
-cd overclock-project-overseer
+cd project-overseer
 npm install
 npm run build
 npm start
@@ -86,13 +86,13 @@ npm start
 Fluxo esperado:
 
 ```bash
-npm install -g overclock-project-overseer
+npm install -g project-overseer
 ```
 
 ou:
 
 ```bash
-npx overclock-project-overseer
+npx project-overseer
 ```
 
 O pacote npm devera expor o comando principal `ovr`.
