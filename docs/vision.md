@@ -166,3 +166,24 @@ fase ativa de desenvolvimento.
   JSON estruturado da secao "Dados adicionais" do relatorio.
 - Quando os tres pontos acima estiverem maduros, considerar publicacao no npm
   e divulgacao ativa em comunidades de desenvolvedores.
+
+### Experiencia do usuario na CLI
+
+Durante o dogfood ficou claro que a saida atual e correta mas pouco
+amigavel. Ler o resultado exige abrir o Markdown gerado em outro editor.
+Os pontos abaixo guiam a proxima rodada de melhoria de UX da CLI:
+
+- Logging por agente durante o `checkup completo`, mostrando em tempo real
+  qual agente esta executando e quantos findings cada um produziu.
+- Resumo executivo no terminal ao final do comando, com contagem por
+  severidade (alta, media, baixa, info) e link claro para o relatorio
+  completo.
+- Saida com cores, indentacao e icones consistentes, respeitando a
+  variavel de ambiente `NO_COLOR` para terminais que nao suportam.
+- Flags `--quiet`, `--verbose` e `--json` para diferentes cenarios de uso
+  (script, debug, encadeamento com outras ferramentas).
+- Indicador de progresso durante a varredura em projetos grandes.
+- Sugestao de proximo comando ao final de cada execucao bem-sucedida.
+- `ovr help <comando>` com descricao por subcomando e por escopo.
+- Detecao de typo em escopo com sugestao do valido mais proximo.
+- Internacionalizacao opcional via `OVR_LANG`, mantendo PT-BR como padrao.

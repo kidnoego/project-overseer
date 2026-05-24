@@ -188,6 +188,36 @@ as proximas iteracoes:
 - Melhorar validacoes antes do Nivel 2.
 - Padronizar handoffs entre agentes.
 
+### Experiencia do usuario na CLI
+
+A saida atual e funcional, mas minimalista. As proximas iteracoes devem
+melhorar a experiencia de uso direto no terminal:
+
+- Logging por agente durante o `checkup completo`, mostrando em tempo real
+  quem esta rodando e quantos findings cada agente produziu (ex.:
+  `[..] Cybersecurity Agent... 2 finding(s)`).
+- Resumo executivo no terminal apos a execucao, com contagem por severidade
+  e o caminho do relatorio destacado, sem o usuario precisar abrir o
+  Markdown para entender o resultado.
+- Cores, icones e indentacao consistentes para `[OK]`, `[ERRO]`, `[INFO]`
+  e severidades (high, medium, low, info), respeitando `NO_COLOR` quando
+  definido.
+- Flag `--quiet` para integracao em scripts e flag `--verbose` para debug
+  com detalhes do scanner e dos agentes.
+- Modo `--json` que imprime o resultado estruturado direto no stdout,
+  permitindo encadear com outras ferramentas.
+- Spinner ou barra simples de progresso durante a varredura, especialmente
+  em projetos grandes onde o limite de 1000 entradas pode demorar.
+- Mensagem de "next step" mais explicita ao final de cada comando, ja
+  apontando o proximo verbo (`Proximo: ovr nivel2` ou
+  `Proximo: revise o relatorio em ...`).
+- `ovr help <comando>` por subcomando, no estilo `ovr help checkup`,
+  listando os escopos validos com uma linha de descricao para cada.
+- Mensagens de erro com sugestao de correcao automatica quando aplicavel
+  (ex.: detectar typo em escopo e sugerir o valido mais proximo).
+- Internacionalizacao do texto da CLI no futuro (`OVR_LANG=en`), mantendo
+  PT-BR como padrao.
+
 ### Medio prazo
 
 - Fortalecer testes automatizados da CLI.
