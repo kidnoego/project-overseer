@@ -119,3 +119,50 @@ O projeto roda localmente na maquina do usuario. Nesta primeira fase:
 - Correcao automatica de codigo.
 - Reestruturacao automatica de pastas.
 - Execucao de comandos destrutivos ou migracoes.
+
+## Estrategia de validacao da primeira fase
+
+A primeira fase do produto e de validacao privada via dogfood. O autor utiliza
+a CLI nos proprios projetos pessoais antes de qualquer divulgacao ampla. O
+GitHub fica publico mas em modo passivo: sem promocao ativa, sem campanhas de
+descoberta, sem publicacao no npm.
+
+### Por que dogfood primeiro
+
+- Cada projeto real do autor vira um caso de teste diferente.
+- Falhas, falsos positivos e findings fracos aparecem cedo, em contexto real.
+- O autor articula o problema antes de empurrar a solucao para outras pessoas.
+- Reduz o risco de evoluir a ferramenta com base em suposicoes.
+
+### Praticas recomendadas durante a validacao
+
+- Linkar `ovr` globalmente com `npm link` na maquina do autor.
+- Rodar `ovr init`, `ovr checkup completo` e `ovr nivel2` em ciclos curtos
+  (por exemplo, ao fim de cada sprint ou semana de trabalho) nos projetos
+  ativos.
+- Abrir issues no repositorio com a label `dogfood-finding` sempre que o
+  relatorio decepcionar, mesmo que o autor seja o unico usuario.
+- Tagear versoes (`vX.Y.Z`) antes de refatorar agentes ou heuristicas, para
+  sempre haver um ponto de retorno estavel.
+- Manter o repositorio publico, sem promover, ate a ferramenta gerar findings
+  consistentes.
+
+### Limitacoes conhecidas para iteracoes futuras
+
+Sao as proximas frentes naturais de evolucao, identificadas durante o dogfood
+inicial. Servem como guia de prioridades quando o projeto voltar para uma
+fase ativa de desenvolvimento.
+
+- Expandir as heuristicas dos agentes em `src/core/agent-router.ts`. As regras
+  atuais sao genericas. A evolucao natural e adicionar regras especificas por
+  contexto: validar `firestore.rules`, configuracoes do Firebase, dependencias
+  desatualizadas, scripts perigosos em `package.json`, presenca de ESLint,
+  ausencia de hooks de pre-commit, etc.
+- Tornar configuravel o limite de 500 entradas em `src/core/project-scanner.ts`.
+  Projetos medios sao truncados cedo. A flag pode ser uma variavel de ambiente
+  ou um argumento da CLI.
+- Reescrever o parser do Nivel 2 em `src/commands/nivel2.ts`. Hoje ele extrai
+  bullets do Markdown gerado. O caminho mais robusto e consumir diretamente o
+  JSON estruturado da secao "Dados adicionais" do relatorio.
+- Quando os tres pontos acima estiverem maduros, considerar publicacao no npm
+  e divulgacao ativa em comunidades de desenvolvedores.

@@ -139,21 +139,57 @@ a analise documental disponivel.
 
 ## Roadmap
 
-Curto prazo:
+### Estrategia de validacao (dogfood)
+
+A primeira fase do projeto e dogfood pessoal. O autor usa a propria CLI nos
+seus projetos antes de qualquer divulgacao publica. Isso evita evoluir a
+ferramenta no escuro e garante que cada melhoria responde a um caso real.
+
+Praticas recomendadas durante essa fase:
+
+- Manter `ovr` linkado globalmente com `npm link` para facilitar uso diario em
+  qualquer projeto.
+- Rodar `ovr init`, `ovr checkup completo` e `ovr nivel2` em ciclos curtos
+  (por exemplo a cada fim de sprint) nos projetos ativos.
+- Registrar cada falha ou achado fraco como issue no proprio repositorio com a
+  label `dogfood-finding`, mesmo sendo o unico usuario, para criar backlog
+  rastreavel.
+- Criar tags `vX.Y.Z` antes de refatorar agentes ou heuristicas, para sempre
+  haver um ponto de retorno estavel.
+- Manter o repositorio publico mas sem promocao ativa enquanto a ferramenta
+  ainda nao gera findings consistentes em projetos reais.
+
+### Limitacoes conhecidas a evoluir
+
+Pontos identificados durante o dogfood inicial e que servem como entrada para
+as proximas iteracoes:
+
+- Heuristicas dos agentes em `src/core/agent-router.ts` sao genericas e
+  produzem poucos findings em projetos reais. Devem ser expandidas com regras
+  especificas (firestore.rules, configs Firebase, dependencias desatualizadas,
+  scripts perigosos no `package.json`, etc.).
+- Limite atual de 500 entradas no `project-scanner.ts` trunca projetos medios.
+  Tornar configuravel via flag ou ajustar dinamicamente conforme a estrutura
+  do projeto.
+- O parser do Nivel 2 (`src/commands/nivel2.ts`) le o Markdown do relatorio
+  por bullets. Migrar para consumir diretamente o JSON estruturado da secao
+  "Dados adicionais" tornaria o Nivel 2 mais robusto.
+
+### Curto prazo
 
 - Refinar mensagens do CLI e exemplos de uso.
 - Expandir relatorios locais de Nivel 1.
 - Melhorar validacoes antes do Nivel 2.
 - Padronizar handoffs entre agentes.
 
-Medio prazo:
+### Medio prazo
 
 - Fortalecer testes automatizados da CLI.
 - Melhorar diagnosticos de ambiente local.
 - Adicionar mais exemplos de relatorios.
 - Evoluir a configuracao local do `.overseer/`.
 
-Futuro Nivel 3:
+### Futuro Nivel 3
 
 - Manter confirmacao explicita do usuario antes de qualquer execucao.
 - Sugerir alteracoes controladas.
