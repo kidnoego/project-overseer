@@ -10,6 +10,7 @@ type CheckupScope =
   | "arquitetura"
   | "qa"
   | "seguranca"
+  | "cybersec"
   | "firebase"
   | "produto";
 
@@ -33,6 +34,7 @@ const VALID_SCOPES: CheckupScope[] = [
   "arquitetura",
   "qa",
   "seguranca",
+  "cybersec",
   "firebase",
   "produto",
 ];
@@ -49,6 +51,9 @@ const SCOPE_ALIASES: Record<string, CheckupScope> = {
   risk: "qa",
   seguranca: "seguranca",
   security: "seguranca",
+  cybersec: "cybersec",
+  cybersecurity: "cybersec",
+  cyber: "cybersec",
   firebase: "firebase",
   devops: "firebase",
   produto: "produto",

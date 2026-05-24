@@ -15,6 +15,7 @@ const CHECKUP_SCOPES = [
   "arquitetura",
   "qa",
   "seguranca",
+  "cybersec",
   "firebase",
   "produto",
 ] as const;
@@ -127,7 +128,7 @@ function usage(): string {
   return [
     "Overseer CLI",
     "",
-    "Checkups locais para avaliar arquitetura, QA, seguranca, Firebase/DevOps e produto sem enviar codigo para SaaS ou backend remoto.",
+    "Checkups locais para avaliar arquitetura, QA, seguranca, cybersec, Firebase/DevOps e produto sem enviar codigo para SaaS ou backend remoto.",
     "",
     "Uso:",
     "  ovr <comando>",
@@ -148,6 +149,7 @@ function usage(): string {
     "  ovr init",
     "  ovr checkup completo",
     "  ovr checkup seguranca",
+    "  ovr checkup cybersec",
     "  ovr nivel2",
     "",
     "Saidas:",

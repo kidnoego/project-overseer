@@ -55,6 +55,7 @@ ovr checkup completo
 ovr checkup arquitetura
 ovr checkup qa
 ovr checkup seguranca
+ovr checkup cybersec
 ovr checkup firebase
 ovr checkup produto
 ovr nivel2
@@ -63,6 +64,8 @@ ovr nivel3
 
 - `init`: cria a estrutura local usada pelo Overseer.
 - `checkup`: executa o Nivel 1. Sem escopo informado, usa `completo`.
+- `checkup cybersec`: roda apenas o Cybersecurity Agent (configs, deps, regras
+  Firebase, secrets versionaveis).
 - `nivel2`: organiza prioridades a partir do relatorio de Nivel 1.
 - `nivel3`: permanece bloqueado nesta primeira versao.
 
@@ -114,7 +117,10 @@ Subagentes previstos:
 
 - Architect Agent: arquitetura, modularidade e estrutura do projeto.
 - QA Risk Agent: riscos de bugs, regressao e qualidade.
-- Security & Permissions Agent: seguranca, permissoes e limites entre niveis.
+- Security & Permissions Agent: arquivos sensiveis na arvore (filesystem-level).
+- Cybersecurity Agent: vulnerabilidades de configuracao e supply chain
+  (config-level): secrets versionaveis, deps inseguras, regras Firebase
+  abertas, scripts perigosos, chaves expostas em configs publicas.
 - Firebase/DevOps Agent: Firebase, comandos, sandbox e riscos operacionais.
 - Product & UX Agent: experiencia do usuario, fluxo de niveis e clareza da CLI.
 

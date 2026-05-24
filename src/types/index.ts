@@ -1,5 +1,5 @@
 /**
- * Overseer type system — centralized definitions for the analysis pipeline.
+ * Overseer type system ï¿½ centralized definitions for the analysis pipeline.
  *
  * All timestamp fields use {@link ISOTimestamp} (ISO-8601 UTC).
  * All identifier fields use branded aliases for clarity.
@@ -26,13 +26,14 @@ export type AgentId =
   | "architect"
   | "qa-risk"
   | "security-permissions"
+  | "cybersecurity"
   | "firebase-devops"
   | "product-ux";
 
 /** Severity of an agent finding, ordered from least to most critical. */
 export type FindingSeverity = "info" | "low" | "medium" | "high";
 
-/** Numeric weight per severity for sorting (info=1 … high=4). */
+/** Numeric weight per severity for sorting (info=1 ï¿½ high=4). */
 export const SEVERITY_WEIGHT: Record<FindingSeverity, number> = {
   info: 1,
   low: 2,
@@ -57,6 +58,24 @@ export interface ProjectFileSummary {
 }
 
 /**
+ * Conteudo bruto de arquivos de configuracao publica do projeto.
+ * Apenas configs nao sensiveis sao lidas (package.json, firebase.json,
+ * firestore.rules, storage.rules, .gitignore, tsconfig.json, eslint.config.*).
+ * Arquivos como .env, *.pem, *.key, serviceAccount*.json NUNCA sao lidos.
+ */
+export interface ProjectConfigs {
+  packageJson?: string;
+  packageLockJson?: string;
+  firebaseJson?: string;
+  firestoreRules?: string;
+  storageRules?: string;
+  gitignore?: string;
+  tsconfigJson?: string;
+  eslintConfig?: string;
+  ciWorkflows: string[];
+}
+
+/**
  * Immutable snapshot of the project's filesystem at scan time.
  * All fields are always present; defaults use empty arrays / "unknown".
  */
@@ -68,6 +87,7 @@ export interface ProjectSnapshot {
   hasTests: boolean;
   hasReadme: boolean;
   notes: string[];
+  configs?: ProjectConfigs;
 }
 
 /** Contract for any filesystem scanner implementation. */

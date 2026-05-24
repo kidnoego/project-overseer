@@ -24,6 +24,7 @@ export type CheckupScope =
   | "arquitetura"
   | "qa"
   | "seguranca"
+  | "cybersec"
   | "firebase"
   | "produto";
 
@@ -188,6 +189,7 @@ function emptySnapshot(rootPath: string): ProjectSnapshot {
     notes: [
       "Snapshot minimo gerado pelo orquestrador porque nenhum scanner foi informado.",
     ],
+    configs: { ciWorkflows: [] },
   };
 }
 
@@ -242,7 +244,7 @@ function normalizeSnapshot(
     return scan;
   }
 
-  // scan is ProjectScan — convert to ProjectSnapshot
+  // scan is ProjectScan ï¿½ convert to ProjectSnapshot
   const files = scan.entries.map((entry) => ({
     path: entry.path,
     type: entry.type,
@@ -266,6 +268,7 @@ function normalizeSnapshot(
     notes: scan.truncated
       ? ["Scanner atingiu o limite de entradas; a analise pode estar incompleta."]
       : [],
+    configs: scan.configs,
   };
 }
 
@@ -309,6 +312,8 @@ function scopeToAgent(scope: CheckupScope): AgentId {
       return "qa-risk";
     case "seguranca":
       return "security-permissions";
+    case "cybersec":
+      return "cybersecurity";
     case "firebase":
       return "firebase-devops";
     case "produto":
